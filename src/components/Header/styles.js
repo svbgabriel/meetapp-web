@@ -11,9 +11,11 @@ export const Container = styled.div`
   mix-blend-mode: normal;
   width: 100%;
 
-  img {
-    height: 30px;
-    width: 30px;
+  a {
+    img {
+      height: 30px;
+      width: 30px;
+    }
   }
 `;
 
