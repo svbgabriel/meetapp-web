@@ -31,6 +31,12 @@ export const Content = styled.div`
       border: 0;
     }
 
+    span {
+      color: rgba(255, 255, 255, 0.3);
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
     input {
       & + input {
         margin-top: 10px;
