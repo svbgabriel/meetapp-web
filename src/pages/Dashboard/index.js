@@ -1,6 +1,5 @@
 import React from 'react';
 import { MdChevronRight, MdAddCircleOutline } from 'react-icons/md';
-import Header from '../../components/Header';
 import {
   Container,
   TopContainer,
@@ -13,7 +12,6 @@ import {
 export default function Dashboard() {
   return (
     <>
-      <Header />
       <Container>
         <TopContainer>
           <p>Meus meetup</p>

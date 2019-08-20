@@ -1,6 +1,5 @@
 import React from 'react';
 import { MdEvent, MdPlace, MdEdit, MdDeleteForever } from 'react-icons/md';
-import Header from '../../components/Header';
 import {
   Container,
   TopContainer,
@@ -15,18 +14,12 @@ import {
 export default function Details() {
   return (
     <>
-      <Header />
       <Container>
         <TopContainer>
           <p>Meetup de React Native</p>
           <ButtonContainer>
             <Edit>
-              <MdEdit
-                MdEvent
-                style={{ marginRight: 10 }}
-                size={20}
-                color="#ffffff"
-              />
+              <MdEdit style={{ marginRight: 10 }} size={20} color="#ffffff" />
               Editar
             </Edit>
             <Cancel>

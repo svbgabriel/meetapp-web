@@ -1,12 +1,10 @@
 import React from 'react';
 import { MdAddCircleOutline } from 'react-icons/md';
-import Header from '../../components/Header';
 import { Container, Form } from './styles';
 
 export default function Profile() {
   return (
     <>
-      <Header />
       <Container>
         <Form>
           <input type="text" name="Nome" />

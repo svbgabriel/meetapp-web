@@ -1,18 +1,31 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
-import { Container, Form, LinkToSign } from './styles';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Form, Input } from '@rocketseat/unform';
+import { signUpRequest } from '~/store/modules/auth/actions';
+import logo from '~/assets/logo.svg';
 
 export default function SignUp() {
+  const dispatch = useDispatch();
+
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
+  }
+
   return (
-    <Container>
+    <>
       <img src={logo} alt="logo" />
-      <Form>
-        <input type="text" placeholder="Nome completo" />
-        <input type="text" placeholder="Digite seu e-mail" />
-        <input type="password" placeholder="Sua senha secreta" />
+      <Form onSubmit={handleSubmit}>
+        <Input name="name" placeholder="Nome completo" />
+        <Input name="email" placeholder="Digite seu e-mail" />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Sua senha secreta"
+        />
         <button type="submit">Criar conta</button>
       </Form>
-      <LinkToSign to="/">Já tenho login</LinkToSign>
-    </Container>
+      <Link to="/">Já tenho login</Link>
+    </>
   );
 }
