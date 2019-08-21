@@ -12,6 +12,7 @@ export const TopContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 50px;
 
   > p {
     color: #ffffff;
@@ -45,7 +46,7 @@ export const MeetupContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0 10px 0;
+  margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.1);
   mix-blend-mode: normal;
   border-radius: 4px;
