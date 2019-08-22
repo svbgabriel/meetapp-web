@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
-import ReactDatePicker from 'react-datepicker';
-
+import ReactDatePicker, { registerLocale } from 'react-datepicker';
+import ptBR from 'date-fns/locale/pt-BR';
 import { useField } from '@rocketseat/unform';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import './styles.css';
 
-export default function DatePicker({ name }) {
+registerLocale('pt-BR', ptBR);
+
+export default function DatePicker({ name, ...rest }) {
   const ref = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
   const [selected, setSelected] = useState(defaultValue);
@@ -28,6 +31,8 @@ export default function DatePicker({ name }) {
         selected={selected}
         onChange={date => setSelected(date)}
         ref={ref}
+        locale="pt-BR"
+        {...rest}
       />
       {error && <span>{error}</span>}
     </>
