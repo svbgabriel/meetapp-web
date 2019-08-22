@@ -29,6 +29,12 @@ export const Container = styled.div`
       color: #ffffff;
     }
 
+    span {
+      color: rgba(255, 255, 255, 0.3);
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
     > input {
       width: 100%;
       flex: 1;
