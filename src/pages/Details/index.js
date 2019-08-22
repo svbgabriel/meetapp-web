@@ -17,8 +17,7 @@ import api from '~/services/api';
 import history from '~/services/history';
 
 export default function Details({ match }) {
-  const [meetup, setMeetup] = useState({});
-  const [banner, setBanner] = useState({});
+  const [meetup, setMeetup] = useState({ banner: {} });
   const { id } = match.params;
 
   const isMeetupEditable = useMemo(
@@ -28,10 +27,9 @@ export default function Details({ match }) {
 
   useEffect(() => {
     async function loadMeetup() {
-      const response = await api.get(`meetups/${id}`);
+      const { data } = await api.get(`meetups/${id}`);
 
-      setMeetup(response.data);
-      setBanner(response.data.banner);
+      setMeetup(data);
     }
 
     loadMeetup();
@@ -73,7 +71,7 @@ export default function Details({ match }) {
             </ButtonContainer>
           )}
         </TopContainer>
-        <img src={banner.url} alt="banner" />
+        <img src={meetup.banner.url} alt="banner" />
         <p>{meetup.description}</p>
         <TextContainer>
           <DateContainer>
