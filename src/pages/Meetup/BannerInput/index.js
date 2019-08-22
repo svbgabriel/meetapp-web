@@ -18,7 +18,7 @@ export default function BannerInput() {
         path: 'dataset.file',
       });
     }
-  }, [ref, defaultValue]); // eslint-disable-line
+  }, [ref, registerField]); // eslint-disable-line
 
   async function handleChange(e) {
     const data = new FormData();
