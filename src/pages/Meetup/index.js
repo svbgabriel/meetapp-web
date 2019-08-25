@@ -15,6 +15,7 @@ const schema = Yup.object().shape({
   description: Yup.string().required('A descrição do Meetup é obrigatória'),
   date: Yup.date().required('A data do Meetup é obrigatória'),
   localization: Yup.string().required('A descrição do Meetup é obrigatória'),
+  banner_id: Yup.number().required('A imagem para o Meetup é obrigatória'),
 });
 
 export default function Meetup({ match }) {
@@ -35,7 +36,6 @@ export default function Meetup({ match }) {
   async function handleMeetup(data) {
     if (id) {
       try {
-        console.tron.log(data);
         await api.put(`meetups/${id}`, data);
         toast.success('Meetup atualizado com sucesso');
         history.push('/dashboard');
@@ -44,7 +44,6 @@ export default function Meetup({ match }) {
       }
     } else {
       try {
-        console.tron.log(data);
         await api.post('meetups', data);
         toast.success('Meetup criado com sucesso');
         history.push('/dashboard');
@@ -54,7 +53,7 @@ export default function Meetup({ match }) {
       }
     }
   }
-  // TODO: Valor do banner_id não está sendo retornado, verificar
+
   return (
     <>
       <Container>
