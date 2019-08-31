@@ -3,16 +3,16 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
+  flex-direction: column;
+  margin: 50px auto;
+  max-width: 940px;
 
   form {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    max-width: 900px;
-    margin: 0 30px;
+    max-width: 940px;
 
     > textarea {
       font-family: Roboto, sans-serif;

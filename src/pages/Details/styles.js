@@ -3,13 +3,13 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-top: 40px;
+  max-width: 940px;
+  margin: 40px auto;
 
   img {
     height: 300px;
-    width: 940px;
+    max-width: 940px;
     margin-bottom: 25px;
   }
 
@@ -20,13 +20,13 @@ export const Container = styled.div`
     color: #ffffff;
     margin-bottom: 30px;
     word-wrap: break-word;
-    max-width: 900px;
+    max-width: 940px;
   }
 `;
 
 export const TopContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 50px;
 

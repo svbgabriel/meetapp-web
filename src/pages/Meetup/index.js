@@ -48,46 +48,43 @@ export default function Meetup({ match }) {
         toast.success('Meetup criado com sucesso');
         history.push('/dashboard');
       } catch (err) {
-        console.tron.log(err);
         toast.error('Não foi possível criar o Meetup');
       }
     }
   }
 
   return (
-    <>
-      <Container>
-        <Form schema={schema} initialData={meetup} onSubmit={handleMeetup}>
-          <BannerInput name="banner_id" />
-          <Input name="title" placeholder="Título do Meetup" />
-          <Input
-            name="description"
-            multiline
-            rows={10}
-            placeholder="Descrição completa"
-            value={meetup.description}
+    <Container>
+      <Form schema={schema} initialData={meetup} onSubmit={handleMeetup}>
+        <BannerInput name="banner_id" />
+        <Input name="title" placeholder="Título do Meetup" />
+        <Input
+          name="description"
+          multiline
+          rows={10}
+          placeholder="Descrição completa"
+          value={meetup.description}
+        />
+        <DateInput
+          showTimeSelect
+          timeFormat="p"
+          timeIntervals={60}
+          dateFormat="Pp"
+          timeCaption="Horário"
+          name="date"
+          placeholderText="Data do meetup"
+        />
+        <Input name="localization" placeholder="Localização" />
+        <button type="submit">
+          <MdAddCircleOutline
+            style={{ marginRight: 10 }}
+            size={20}
+            color="#ffffff"
           />
-          <DateInput
-            showTimeSelect
-            timeFormat="p"
-            timeIntervals={60}
-            dateFormat="Pp"
-            timeCaption="Horário"
-            name="date"
-            placeholderText="Data do meetup"
-          />
-          <Input name="localization" placeholder="Localização" />
-          <button type="submit">
-            <MdAddCircleOutline
-              style={{ marginRight: 10 }}
-              size={20}
-              color="#ffffff"
-            />{' '}
-            Salvar meetup
-          </button>
-        </Form>
-      </Container>
-    </>
+          Salvar meetup
+        </button>
+      </Form>
+    </Container>
   );
 }
 

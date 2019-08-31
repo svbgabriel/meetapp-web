@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
+import background from '~/assets/background-banner.svg';
 import api from '~/services/api';
 import { Container } from './styles';
 
@@ -36,12 +37,7 @@ export default function BannerInput() {
   return (
     <Container>
       <label htmlFor="banner">
-        <img
-          src={
-            preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'
-          }
-          alt=""
-        />
+        <img src={preview || background} alt="" />
 
         <input
           type="file"

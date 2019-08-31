@@ -56,7 +56,7 @@ export default function Dashboard() {
               style={{ marginRight: 10 }}
               color="#ffffff"
               size={20}
-            />{' '}
+            />
             Novo meetup
           </button>
         </TopContainer>

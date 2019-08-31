@@ -4,13 +4,13 @@ import { darken } from 'polished';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+  max-width: 940px;
+  margin: 40px auto;
 `;
 
 export const TopContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 50px;
 
@@ -52,8 +52,7 @@ export const MeetupContainer = styled.div`
   border-radius: 4px;
   height: 62px;
   padding: 0 20px;
-  width: 100%;
-  max-width: 900px;
+  max-width: 940px;
 `;
 
 export const Title = styled.p`

@@ -2,14 +2,17 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 import { Link } from 'react-router-dom';
 
+export const Content = styled.div`
+  background: rgba(0, 0, 0, 0.3);
+`;
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 90px;
-  background: rgba(0, 0, 0, 0.3);
-  mix-blend-mode: normal;
-  width: 100%;
+  margin: 0 auto;
+  max-width: 940px;
 
   a {
     img {
